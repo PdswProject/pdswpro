@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    
+   <settings>
+        <setting name="logImpl" value="log4j"/>        
+    </settings>
+
+    <typeAliases>
+	<typeAlias type='edu.eci.pdsw.samples.entities.Asignatura' alias='Asignatura'/>
+        <typeAlias type='edu.eci.pdsw.samples.entities.Consejero' alias='Consejero'/>
+        <typeAlias type='edu.eci.pdsw.samples.entities.Decano' alias='Decano'/>
+        <typeAlias type='edu.eci.pdsw.samples.entities.Estudiante' alias='Estudiante'/>
+        <typeAlias type='edu.eci.pdsw.samples.entities.PlanEstudios' alias='PlanEstudios'/>
+        <typeAlias type='edu.eci.pdsw.samples.entities.ProgramaAcademico' alias='ProgramaAcademico'/>
+        <typeAlias type='edu.eci.pdsw.samples.entities.SolicitudCancelacion' alias='SolicitudCancelacion'/>
+    </typeAliases>
+
+    <environments default="development">
+        <environment id="development">
+            <transactionManager type="JDBC" />
+            <dataSource type="POOLED">
+                <property name="driver" value="org.h2.Driver" />
+                <property name="url" value="jdbc:h2:file:./target/db/testdb;MODE=PostgreSQL" />
+                <property name="username" value="anonymous" />
+                <property name="password" value="" />
+            </dataSource>
+        </environment>
+    </environments>
+    
+   <mappers>
+            
+	<mapper resource="mappers/ConsejeroMapper.xml"></mapper>       
+        <mapper resource="mappers/DecanoMapper.xml"></mapper> 
+        <mapper resource="mappers/EstudianteMapper.xml"></mapper>
+        <mapper resource="mappers/ConsultaSolicitudCancelacionMapper.xml"></mapper>  
+    </mappers> 
+    
+</configuration>

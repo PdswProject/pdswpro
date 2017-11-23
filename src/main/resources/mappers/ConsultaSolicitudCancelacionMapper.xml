@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="edu.eci.pdsw.samples.dao.mybatis.mappers.ConsultaSolicitudCancelacionMapper">
+
+    <select parameterType="map" id="getSolicitudCancelacion" resultMap="SolicitudCancelacionResult">
+        Select sc.id, sc.estado, ca.aval, es.nombre, es.id , acu.vistoBueno from ConsejeroAcademico ca, SolicitudCancelacion sc INNER JOIN  Estudiante es on es.id=sc.estudiante INNER JOIN Acudiente acu on acu.cc =es.Acudiente_id;
+    </select> 
+    
+    <resultMap type='SolicitudCancelacion' id='SolicitudCancelacionResult'>
+    
+            
+                 
+    </resultMap>
+    
+    
+    
+    
+    
+</mapper>
